@@ -1,0 +1,38 @@
+TwoSum output:
+
+  1     0.0   20250908_143015  nsackett  1Kints.txt
+  2     0.0   20250908_143015  nsackett  2Kints.txt
+  3     0.0   20250908_143015  nsackett  4Kints.txt
+ 19     0.0   20250908_143015  nsackett  8Kints.txt
+ 66     0.0   20250908_143015  nsackett  16Kints.txt
+273     0.1   20250908_143016  nsackett  32Kints.txt
+
+
+ThreeSum output:
+
+     70     0.1   20250908_143100  nsackett  1Kints.txt
+    528     0.3   20250908_143101  nsackett  2Kints.txt
+   4039     2.4   20250908_143103  nsackett  4Kints.txt
+  32074    19.4   20250908_143122  nsackett  8Kints.txt
+ 255181   295.1   20250908_143617  nsackett  16Kints.txt
+2052358  3831.9   20250908_154009  nsackett  32Kints.txt
+
+
+TwoSumFast output:
+
+  1     0.0   20250908_155812  nsackett  1Kints.txt
+  2     0.0   20250908_155812  nsackett  2Kints.txt
+  3     0.0   20250908_155812  nsackett  4Kints.txt
+ 19     0.0   20250908_155812  nsackett  8Kints.txt
+ 66     0.0   20250908_155812  nsackett  16Kints.txt
+273     0.0   20250908_155812  nsackett  32Kints.txt
+
+
+ThreeSumFast output:
+
+     70     0.0   20250908_155938  nsackett  1Kints.txt
+    528     0.1   20250908_155938  nsackett  2Kints.txt
+   4039     0.2   20250908_155939  nsackett  4Kints.txt
+  32074     0.9   20250908_155939  nsackett  8Kints.txt
+ 255181     3.2   20250908_155943  nsackett  16Kints.txt
+2052358    23.4   20250908_160006  nsackett  32Kints.txt
