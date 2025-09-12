@@ -1,3 +1,6 @@
+name: Norman Sackett
+email: nsackett@u.rochester.edu
+
 Predictions:
 TwoSum - Since all the runtimes up to 16K integers were 0.0s, I can't imagine it would go much higher than that. For 32K and 1M I predict 0.0s and 0.1s respectively. My estimate was prttey close, with the actual runtime for the 32K file being 0.1s.
 ThreeSum - Comparing the runtimes for ThreeSum, the rate at which they increase seems to be going up (from 1K to 2K there is a 3x jump, but from 2K to 4K, there is an 8x jump). I'd estimate the runtime for 32K to be around 4,500s and the runtime for 1M to be around 90,000s. My estimae was a bit high, with the actual runtime for 32K being 3,831.9s.
