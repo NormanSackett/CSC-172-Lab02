@@ -1,0 +1,48 @@
+Predictions:
+TwoSum - Since all the runtimes up to 16K integers were 0.0s, I can't imagine it would go much higher than that. For 32K and 1M I predict 0.0s and 0.1s respectively. My estimate was prttey close, with the actual runtime for the 32K file being 0.1s.
+ThreeSum - Comparing the runtimes for ThreeSum, the rate at which they increase seems to be going up (from 1K to 2K there is a 3x jump, but from 2K to 4K, there is an 8x jump). I'd estimate the runtime for 32K to be around 4,500s and the runtime for 1M to be around 90,000s. My estimae was a bit high, with the actual runtime for 32K being 3,831.9s.
+TwoSumFast - Since all the runtimes up to 16K for TwoSumFast were 0.0s, I'd make a prediction similar to the one I make for TwoSum. This was accutrate, as the runtime for 32K integers was 0.0s.
+ThreeSumFast - The runtimes for ThreeSumFast are growing much slower than they did for ThreeSum. Based on the ratios between each successive runtime, I'd predict the runtime for 32K to be around 12s and 1M to be around 64s. This estimate was a bit optimistic, as the actual runtime for 32K was 23.4s.
+
+Workshop analysis:
+TwoSum
+  public static int count(int[] a) {
+        int n = a.length;
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) { //each for loop gives a runtime of n - since they're nested their runtimes are multiplied together, giving a total runtime of O(n^2)
+                if (a[i] + a[j] == 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    } 
+
+TwoSumFast
+  public static int count(int[] a) {
+		int n = a.length;
+		Arrays.sort(a);
+		if (containsDuplicates(a)) throw new IllegalArgumentException("array contains duplicate integers");
+		int count = 0;
+		for (int i = 0; i < n; i++) { //for loop through n gives a runtime of n
+			int j = Arrays.binarySearch(a, -a[i]); //binary search for each loop of n multiples by log(n) because the binary search cuts n in half every time it runs, making the total runtime O(n * log(n))
+			if (j > i) count++;
+		}
+		return count;
+	}
+
+ThreeSumFast
+  public static int count(int[] a) {
+        int n = a.length;
+        Arrays.sort(a);
+        if (containsDuplicates(a)) throw new IllegalArgumentException("array contains duplicate integers");
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) { //nested for loops through n give an n^2 runtime
+                int k = Arrays.binarySearch(a, -(a[i] + a[j])); //binary search is a log(n) runtime, making the total runtime O(n^2 * log(n))
+                if (k > j) count++;
+            }
+        }
+        return count;
+    } 
